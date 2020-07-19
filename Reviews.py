@@ -5,7 +5,7 @@ def getRating(htmlElement):
     ratingClass = ratingDiv.attrs["class"]
     return int(ratingClass[1][7:9])
 
-def getReviews(soup):
+def getReviews(soup): # TODO: Alle Reviews laden: (URL: Reviews-or10)
     result = []
     revs = soup.find_all(class_="_2wrUUKlw")
     for rev in revs:
