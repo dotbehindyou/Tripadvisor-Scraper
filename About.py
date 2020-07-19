@@ -1,4 +1,5 @@
 # About
+from Tripadvisor import getContent, saveJson
 from Reviews import getRating
 
 
@@ -58,3 +59,10 @@ def getAbout(soup):
                 result["roomTypes"].append(roomTypes.getText())
 
     return result
+
+def testAbout():
+    soup = getContent()
+    saveJson('about', getAbout(soup))
+
+if __name__ == "__main__":
+    testAbout()

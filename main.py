@@ -1,20 +1,19 @@
-import requests
-import json
 import Reviews
 import About
-from bs4 import BeautifulSoup
+from Tripadvisor import saveJson, getContent
 
-url = ''
-page = requests.get(url)
-soup = BeautifulSoup(page.content, 'html.parser')
+import json
 
-reviews = Reviews.getReviews(soup)   
-with open('data/reviews.json', 'w') as outfile:
-    json.dump(reviews, outfile)
+def run_reviews(soup):
+    reviews = Reviews.getReviews(soup)
+    saveJson('reviews',reviews)
 
-about = About.getAbout(soup)
-with open('data/about.json', 'w') as outfile:
-    json.dump(about, outfile)
+def run_about(soup):
+    about = About.getAbout(soup)
+    saveJson('about',about)
 
-
-print("Done.")
+if __name__ == "__main__":
+    soup = getContent()
+    run_reviews(soup)
+    run_about(soup)
+    print("Done.")
