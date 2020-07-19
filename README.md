@@ -1,6 +1,15 @@
 # Tripadvisor-Scraper
-Scrap data from a Tripadvisor object (before using it, read the conditions from Tripadvisor) 
+Scrap data from a Tripadvisor object (before using it, read the conditions from Tripadvisor)  
 [ Not finished yet! ]
+
+## How-To
+You need this Python (3) librarys:  
+- json
+- requests
+- BeautifulSoup
+
+Edit "main.py" and change the url to a Tripadvisor object. 
+e.g.: https://www.tripadvisor.com/Hotel_Review-g1053569-d1112186-Reviews-Zur_Alten_Brucke-Schiltach_Baden_Wurttemberg.html
 
 ## LICENSE
 Tripadvisor-Scraper, scrap data from a Tripadvisor object  
