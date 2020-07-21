@@ -4,9 +4,9 @@ Scrap data from a Tripadvisor object (before using it, read the conditions from 
 
 ## How-To
 You need this Python (3) librarys:  
-- [https://docs.python.org/3/library/json.html](json)
-- [https://requests.readthedocs.io/en/master/](requests)
-- [https://www.crummy.com/software/BeautifulSoup/](BeautifulSoup)
+- [json](https://docs.python.org/3/library/json.html)
+- [requests](https://requests.readthedocs.io/en/master/)
+- [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/)
 
 ```python
     # Select all reviews from a hotel 
