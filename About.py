@@ -1,4 +1,5 @@
 # About
+from Tripadvisor import getContent, saveJson, generateUrl
 from Reviews import getRating
 
 
@@ -46,15 +47,23 @@ def getAbout(soup):
 
     props = about.find_all(class_="_1mJdgpMJ")
     for prop in props:
-        sib = prop.next_sibling.find_all("_2rdvbNSg")
+        sib = prop.nextSibling.find_all(class_="_2rdvbNSg")
         if prop.getText() == "Property amenities":
             for amenities in sib:
                 result["amenities"].append(amenities.getText())
-        if prop.getText() == "Room features":
+        elif prop.getText() == "Room features":
             for roomFeauters in sib:
                 result["roomFeauters"].append(roomFeauters.getText())
-        if prop.getText() == "Room types":
+        elif prop.getText() == "Room types":
             for roomTypes in sib:
                 result["roomTypes"].append(roomTypes.getText())
 
     return result
+
+def testAbout():
+    url = generateUrl(1053569, 1112186)
+    soup = getContent(url)
+    saveJson('about.test', getAbout(soup))
+
+if __name__ == "__main__":
+    testAbout()
