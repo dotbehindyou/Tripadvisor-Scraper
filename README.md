@@ -8,8 +8,16 @@ You need this Python (3) librarys:
 - requests
 - BeautifulSoup
 
-Edit "main.py" and change the url to a Tripadvisor object. 
-e.g.: https://www.tripadvisor.com/Hotel_Review-g1053569-d1112186-Reviews-Zur_Alten_Brucke-Schiltach_Baden_Wurttemberg.html
+```python
+    # Select all reviews from a hotel 
+    from Tripadvisor import getContent, saveJson, generateUrl
+    from Reviews import getManyReviews
+
+    url = generateUrl(1053569, 1112186)
+    soup = getContent(url)
+    manyReviews = getManyReviews(soup, 100)
+    saveJson('reviews.many.test', manyReviews)
+```
 
 ## LICENSE
 Tripadvisor-Scraper, scrap data from a Tripadvisor object  
