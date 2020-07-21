@@ -5,6 +5,7 @@ from Reviews import getRating
 
 def getAbout(soup):
     result = {
+        "id": None,
         "ratingAverage": None,
         "ratingCount": None,
         "subRating":{
