@@ -10,6 +10,10 @@ def getContent(url):
     page = requests.get(url)
     return BeautifulSoup(page.content, 'html.parser')
 
-def generateUrl(g, d):
-    return "https://www.tripadvisor.com/g"+str(g)+"-d"+str(d)
-    
+def generateUrl(g, d, or_ = None): # TODO: German, English, etc URL (.de, .com, .fr, etc.)
+    result = "https://www.tripadvisor.com/g"+str(g)+"-d"+str(d)
+
+    if or_ != None:
+        result = result + "-or" + str(or_)
+
+    return result
